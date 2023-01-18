@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %} статистика {% endblock %}
+
+{% block content %}
+	<table>
+		<tr>
+            <td>количество респондентов:</td>
+            <td>{{ info['total_count'] }}</td>
+        </tr>
+        <tr>
+            <td>средний возраст респондентов:</td>
+            <td>{{ info['age_mean'] }}</td>
+        </tr>
+        <tr>
+            <td>минимальный возраст респондента:</td>
+            <td>{{ info['age_min'] }}</td>
+        </tr>
+        <tr>
+            <td>максимальный возраст респондента:</td>
+            <td>{{ info['age_max'] }}</td>
+        </tr>
+        <tr>
+            <td>среднее настроение респондентов:</td>
+            <td>{{ info['mood_mean'] }}</td>
+        </tr>
+		<tr>
+            <td>количество безумцев, назвавших любимым цветом синий:</td>
+            <td>{{ info['madmen'] }}</td>
+        </tr>
+    </table>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %} анкета {% endblock %}
+
+{% block content %}
+	<form action="/inquiry" method = "post">
+		<fieldset>
+		<legend><b>опрос</b></legend>
+		<br>
+		ваш гендер?<br>
+		<input type="radio" name="gender" value="yes" checked>да<br>
+		<input type="radio" name="gender" value="no">нет, не мой<br>
+		<br>
+		ваше имя?<br>
+		<input type="text" name="name" required pattern='[А-Я][а-я]+'><br>
+		<br>
+		ваш возраст?<br>
+		<input type="text" name="age" required pattern='[0-9]+'><br>
+		<br>
+		ваше любимое число?<br>
+		<input type="text" name="number" required pattern='[0-9]+'><br>
+		<br>
+		ваш любимый цвет?<br>
+		<select name="colour" class="col-md-4">
+					<option value="red">красный</option>
+					<option value="orange">оранжевый</option>
+					<option value="yellow">жёлтый</option>
+					<option value="green">зелёный</option>
+					<option value="blue">синий</option>
+					<option value="eleven">одиннадцать</option>
+					<option value="black">чёрный</option>
+				</select><br>
+		<br>
+		ваше настроение сейчас?<br>
+		<input type="range" name="mood" class="form-control-range">
+		<br>
+		</fieldset>
+	<p><button type="submit" class="btn btn-primary">Отправить</button></p>
+	</form>
+{% endblock %}
